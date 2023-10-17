@@ -1,0 +1,194 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>SORACOM LTE-M Enterprise Buttonを利用したハンズオン(持ち込みVer.)</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="soracom-beam-amazon-location-service-handson-button-byol"
+                  title="SORACOM LTE-M Enterprise Buttonを利用したハンズオン(持ち込みVer.)"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="オンラインハンズオンを始める前に" duration="5">
+        <h2 is-upgraded>前提</h2>
+<p>このドキュメントを進めるにあたって、以下のデバイスが必要となります。</p>
+<ul>
+<li>SORACOM LTE-M Button for Enterprise</li>
+</ul>
+<p>このドキュメントを進めるにあたって、以下のアカウントが必要となります。</p>
+<ul>
+<li>SORACOM</li>
+<li>SAMユーザー</li>
+</ul>
+<p>SORACOMのアカウントをお持ちでない方は <a href="https://users.soracom.io/ja-jp/guides/getting-started/create-account/" target="_blank">https://users.soracom.io/ja-jp/guides/getting-started/create-account/</a> から作成してください。<br>本ハンズオンではSAMユーザーでの操作する前提のテキストになっています。SAMユーザーの作成がまだの方は<a href="https://users.soracom.io/ja-jp/docs/sam/create-sam-user/" target="_blank">https://users.soracom.io/ja-jp/docs/sam/create-sam-user/</a> から作成してください。</p>
+<h2 is-upgraded>構成図<br><img style="width: 601.70px" src="img/3aa3fa32c2fc7dd4.png"></h2>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="ユーザーコンソールへのログイン手順" duration="1">
+        <p>SORACOMユーザーコンソールへのログイン手順を解説します。<br></p>
+<h2 is-upgraded>ユーザーコンソールへログインする</h2>
+<p>SORACOM ユーザーコンソール(SAMユーザログイン) (https://console.soracom.io/#/sam_login?coverage_type=jp) へアクセスします。SAMユーザのログイン画面が表示されますので、ご自身のオペレーターID、SAMユーザー、パスワードを入力し [ログイン] ボタンをクリックしてください。<br></p>
+<p class="image-container"><img style="width: 397.00px" src="img/6c47f50f2baa9001.png"></p>
+<p>SAMユーザーが他要素認証設定済みの場合は、MFA認証コードを入力する画面に遷移します。設定済みのMFA認証コードを入力してください。<img style="width: 408.00px" src="img/9e0bdbf00d0c385c.png"></p>
+<p>以下のような「SIM 管理」画面が表示されたらログイン完了です。</p>
+<p class="image-container"><img style="width: 604.21px" src="img/231a64cf2d2f821.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="ガジェット設定        〜Harvest動作確認" duration="0">
+        <p>ガジェット設定を行い、動作確認として、Enterprise Buttonをクリックした際に SORACOM Harvest に対してデータをクリックタイプを保存する方法を解説します。</p>
+<h2 is-upgraded>ガジェット設定にて、グループを作成する。</h2>
+<ol type="1" start="1">
+<li>ユーザーコンソール(https://console.soracom.io/) の &#34;Menu&#34; から &#34;ガジェット管理&#34; の&#34;LTE-M Button for Enterprise/Plus&#34; をクリックします。<img style="width: 601.70px" src="img/c52bd0b34392cecc.png"><br><img style="width: 278.50px" src="img/7c8d6d936e9fc134.png"></li>
+<li>&#34;デバイスを追加&#34;ボタンをクリックします。</li>
+</ol>
+<p class="image-container"><img style="width: 601.70px" src="img/d890ca8b6660d311.png"></p>
+<ol type="1" start="3">
+<li>今回使用するボタンが表示されているので、チェックを入れて、&#34;次へ : グループを選択&#34;をクリックします。<br>※もし、ボタン一覧に利用するボタンが表示されていない場合は、チューターにご連絡ください。<br><img style="width: 601.70px" src="img/15df003883f74681.png"></li>
+<li>新規グループを作成 を選び、グループ名に任意の名前 (たとえば &#34;handson-button&#34;)を入力して、&#34;次へ : 設定を編集&#34; をクリックします。<br><img style="width: 601.70px" src="img/daa979a54d629fcd.png"><br></li>
+<li>可視化セクションの&#34;可視化を有効にする(SORACOM Harvest Data / Lagoon)&#34;と簡易位置測位機能セクションの&#34;位置情報を付与する(簡易位置測位機能)&#34;にチェックを入れて、画面下部の&#34;保存&#34;ボタンをクリックします。<br><img style="width: 601.70px" src="img/bfea569e0e7d52ae.png"><br><br><img style="width: 601.70px" src="img/4cf77b4d3fe5af7c.png"></li>
+<li>設定完了のダイアログが出てくれば、完了です。&#34;デバイス一覧に戻る&#34;をクリックして、デバイス一覧画面に戻ります。<br><img style="width: 450.02px" src="img/32397ca127c0c4a4.png"><br><br></li>
+<li>デバイス一覧にて、&#34;SIMグループを編集&#34;ボタンをクリックします。<br><img style="width: 601.70px" src="img/e8218faf169d3509.png"></li>
+<li>作成したSIMグループの設定画面に移動しますので、SORACOM Air for セルラー設定 セクションで、<strong>簡易位置測位機能</strong>がON、<strong>バイナリーパーサー</strong>がONで、フォーマットに<strong>@button</strong>と入っていることを確認します。<br><img style="width: 601.70px" src="img/e0289e96c059483f.png"></li>
+</ol>
+<p class="image-container"><img style="width: 601.70px" src="img/bff5404c201b3429.png"></p>
+<ol type="1" start="9">
+<li>SORACOM Harvest Data 設定セクションにて、設定がONになっていることを確認します。<br><img style="width: 601.70px" src="img/d26cfdceca3d2c4.png"></li>
+</ol>
+<h2 is-upgraded>Enterprise Button を押して Harvest を確認する</h2>
+<p>いよいよ Enterprise Button を押します。ボタンをクリックし、 LED がオレンジ色となり、数秒後に緑色となればデータの送信は成功です。</p>
+<p class="image-container"><img style="width: 570.00px" src="img/d8a87790dd590386.png"></p>
+<p>Harvest 上のデータを以下の手順で確認します。</p>
+<ol type="1" start="1">
+<li>&#34;Menu&#34; から &#34;SIM 管理&#34; を選択します。<br><img style="width: 302.00px" src="img/145a4e3af5e696b8.png"></li>
+<li>Enterprise Button の SIM の左端にある チェックボックスを選択し、&#34;操作&#34; =&gt; &#34;データを確認&#34; を選択します。<img style="width: 601.70px" src="img/bc3f8667c221c4f9.png"><br></li>
+<li>&#34;データ&#34; 列にて、&#34;clickTypeName&#34; が &#34;SINGLE&#34; であることを確認します。<br><img style="width: 601.70px" src="img/d08d95e64ee96e57.png"></li>
+<li>マップピンアイコンを選択することで表示を地図に変更して、位置情報を確認します。左上の &#34;+&#34; や &#34;-&#34; でズームを調整できます。&#34;データ&#34; にも <code>$metadata.location</code> オブジェクトとしてで位置情報が入っています。<br><img style="width: 601.70px" src="img/16c2d5f1e926579a.png"></li>
+<li>Enterprise Button は以下 3 種類のクリックに対応しています。それぞれぜひ試してみてください。連続してデータの送信をしたい場合は Harvest の画面にて「自動更新」を &#34;ON&#34; にしてみてください。</li>
+</ol>
+<ul>
+<li>シングル: 短く(1.2 秒未満) 1 回押す</li>
+<li>ダブル: 2 秒以内にシングルクリックを 2 回行う</li>
+<li>ロング: 1.2 秒以上押し続ける。</li>
+</ul>
+<p class="image-container"><img style="width: 601.70px" src="img/82bd5441c986d16a.png"><img style="width: 601.70px" src="img/9ee0de8fdc42b471.png"></p>
+
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="SORACOM Beam設定〜動作確認" duration="0">
+        <p>SORACOM Beamを使って、デバイスからのデータを運営が用意したAWS環境に送信し、位置情報を可視化するところまでを解説します。</p>
+<p>まず、利用するサービスについて解説します。</p>
+<h2 is-upgraded>SORACOM Beamについて</h2>
+<p>今回のハンズオンでは、「データ転送支援サービス  SORACOM Beam」を用いてAWS LambdaのFunction URLsのエンドポイントにデータを送信します。</p>
+<p>SORACOM Beamについて詳しくは以下の公式ページを参照ください。<br><br><a href="https://soracom.jp/services/beam/" target="_blank">https://soracom.jp/services/beam/</a></p>
+<h3 is-upgraded>利用料金</h3>
+<ul>
+<li>日本カバレッジ 1 リクエスト(*) あたり 0.00099 円</li>
+<li>グローバルカバレッジ 1 リクエスト(*) あたり 0.0000099 USD</li>
+</ul>
+<p>(*) エントリーポイント (Beam) へのリクエスト、Beamから転送先へのリクエスト、それぞれを個別に 1 リクエストとカウントします。</p>
+<p>今回のハンズオンでは、ほとんどの方は無料枠の中でご利用いただけます。</p>
+<h2 is-upgraded>SORACOM Beamの設定</h2>
+<p>AWS Lambdaを呼び出すSORACOM Beamの設定をします。</p>
+<p>所属させたグループ名をクリックし、SIMグループの設定画面に移動します。(以下はButtonの例ですが、GPSマルチユニットでも同様です)</p>
+<p class="image-container"><img style="width: 601.70px" src="img/31b46830a514dd62.png"></p>
+<p>SORACOM Beamのセクションで[設定を追加する]をクリックして、「UDP → HTTP/HTTPS エントリポイント」を選択します。</p>
+<p class="image-container"><img style="width: 566.63px" src="img/9118ca20e225a6e7.png"><img style="width: 262.50px" src="img/ba19f1deb390616c.png"></p>
+<p>以下の設定を入力して「保存」をクリックします。</p>
+<p>今回のハンズオンでは、AWS側のデバイスIDとして、カスタムヘッダで設定した値を利用しますので、必ず設定を行うようにしてください。</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p>設定名</p>
+</td><td colspan="1" rowspan="1"><p>任意</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>ホスト名</p>
+</td><td colspan="1" rowspan="1"><p>当日運営よりご案内します。</p>
+<p>※デバイスによって異なるので、注意</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>レスポンス - ステータスコードを省略</p>
+</td><td colspan="1" rowspan="1"><p>ON</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>カスタムヘッダ</p>
+</td><td colspan="1" rowspan="1"><p>アクション : 追加</p>
+<p>ヘッダ名 : x-soracom-device-name</p>
+<p>値 : 任意ですが、英数字、ハイフン(-)、アンダースコア(_)、ドット(.)のみ利用可能です。</p>
+</td></tr>
+</table>
+<p class="image-container"><img style="width: 460.38px" src="img/76104263eaed27aa.png"></p>
+<p class="image-container"><img style="width: 456.35px" src="img/981725a4c91163f.png"></p>
+<h2 is-upgraded>動作確認</h2>
+<p>デバイスから位置情報を送信してみましょう。オンライン上の運営が表示している画面に、カスタムヘッダで入力した値と緯度軽度が表示されればOKです。</p>
+<p>位置を変えることで、デバイスの位置が変わりますので、休憩がてらにちょっと散歩に出かけてみましょう。</p>
+<p>（Buttonの場合、押した場所によっては、基地局が変わらず、位置が変わらない可能性もあります）<br></p>
+
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="後片付け" duration="0">
+        <p>後片付けの手順を解説します。</p>
+<h3 is-upgraded>SIMグループの削除</h3>
+<p>SIMグループを削除するには、紐づいているSIMグループを削除してから削除する必要があります。</p>
+<ol type="1" start="1">
+<li>SIMの紐付け解除は、SIMグループの登録と同じ手順で、SIMを選択して、SIMの所属グループ変更画面を表示します。<br>新しい所属グループで[グループ解除]を選択して、登録すれば解除されます。</li>
+</ol>
+<p class="image-container"><img style="width: 500.50px" src="img/601ac0ec93ab250f.png"></p>
+<ol type="1" start="2">
+<li>SIMグループの削除は、SIMグループ設定画面右上の[削除]をクリックします。</li>
+</ol>
+<p class="image-container"><img style="width: 503.50px" src="img/25ded7386228b4ec.png"></p>
+<ol type="1" start="3">
+<li>問題なければそのまま[削除する]をクリックします。これで完了です。</li>
+</ol>
+<p class="image-container"><img style="width: 508.66px" src="img/f617fd37dcba7a40.png"></p>
+<p>なお、SIMの紐付けがあると、エラーになりますので、必ずSIMの紐付けを全部解除してから行ってください。</p>
+<h2 is-upgraded>ボタン持ち込み/GPSマルチユニット持ち込みの場合</h2>
+<p>このままでも、課金が発生することはありませんが、後片付けを行います。<br>後片付けの手順にある、以下の手順のみ行ってください。</p>
+<ol type="1" start="1">
+<li>SIMグループの削除</li>
+</ol>
+<h2 is-upgraded>ボタン貸し出しの場合</h2>
+<p>ボタン貸し出しの場合、SORACOMのコンソールからログアウトして、ボタンを運営メンバーにお返しください。</p>
+<h2 is-upgraded>GPSマルチユニット貸し出しの場合</h2>
+<p>後片付けの手順にある以下の手順を実施した上で、GPSマルチユニットからSIMカードを外して、GPSマルチユニットをお返しください。</p>
+<p>SIMカードはお持ち帰りください。</p>
+<ol type="1" start="1">
+<li>SIMグループの削除</li>
+</ol>
+
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

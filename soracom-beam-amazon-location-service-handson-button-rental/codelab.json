@@ -1,0 +1,21 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "updated": "2023-10-17T13:39:41Z",
+  "id": "soracom-beam-amazon-location-service-handson-button-rental",
+  "duration": 6,
+  "title": "SORACOM LTE-M Enterprise Buttonを利用したハンズオン(貸出Ver.)",
+  "authors": "Ippei Funahara、Kenichiro KIMURA、Kenichiro Wada",
+  "summary": "会場でハンズオンに参加される方のうち、貸出のSORACOM LTE-M Enterprise Buttonを利用する場合の手順です。",
+  "source": "1lGX_nnQMDivsiuqXK9Rx3LrGFt2RuKUjXfwhNdZ0Hig",
+  "theme": "100-basic",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "100-basic"
+  ],
+  "tags": [],
+  "url": "soracom-beam-amazon-location-service-handson-button-rental"
+}
