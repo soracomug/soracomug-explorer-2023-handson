@@ -2,15 +2,20 @@
   "environment": "web",
   "format": "html",
   "prefix": "https://storage.googleapis.com",
-  "updated": "2023-10-17T13:39:26Z",
-  "id": "",
+  "updated": "2023-10-18T13:19:21Z",
+  "id": "soracom-beam-amazon-location-service-handson-gps-mutilunit-byol",
   "duration": 6,
-  "title": "",
-  "summary": "",
+  "title": "GPSマルチユニットSORACOM Editionを利用したハンズオン(持ち込みVer.)",
+  "authors": "Ippei Funahara、Kenichiro KIMURA、Kenichiro Wada",
+  "summary": "会場でハンズオンに参加される方のうち、持ち込みのGPSマルチユニットSORACOM Editionを利用する場合の手順です。",
   "source": "1UE7Bx4LY_qLlsXsnedhbpv7P64kpgcX78_itbHjOxt0",
-  "theme": "",
-  "status": null,
-  "category": null,
+  "theme": "100-basic",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "100-basic"
+  ],
   "tags": [],
-  "url": ""
+  "url": "soracom-beam-amazon-location-service-handson-gps-mutilunit-byol"
 }
